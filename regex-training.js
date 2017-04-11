@@ -31,10 +31,12 @@ console.log(str.match(rgx)); // [ 'Rat', 'rat' ]
 console.log(str.replace(rgx, str => `zzz`)); // zzz bag bzzz
 
 // Simple console log matcher
-const match = (s,r) => console.log(s.match(r,s).join());
+const match = (st,rx) => console.log(st.match(rx,st).join());
 
 // . special char
 str = `Red bed`;
 rgx = /.ed/g;
 match(str, rgx); // Red,bed
 
+rgx = /.{3}/g;
+match(str, rgx); // Red, be
